@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Biodata</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .card h1 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .info {
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .info span {
+      font-weight: bold;
+    }
+
+    .info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    #extraInfo {
+      display: none;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    #extraInfo.show {
+      display: block;
+      opacity: 1;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      .info {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/120" alt="Profile Picture">
+    <h1>My Biodata</h1>
+    <div class="info"><span>Name:</span> Rohan Joseph Sam</div>
+    <div class="info"><span>Date of Birth:</span> 21 April 2006</div>
+    <div class="info"><span>Gender:</span> Male</div>
+    <div class="info"><span>Email:</span> <a href="mailto:rohanjosephsam2028@cs.ajce.in">rohanjosephsam2028@cs.ajce.in</a></div>
+    <div class="info"><span>Phone:</span> <a href="tel:+919876543210">+91 98765 43210</a></div>
+    <div class="info"><span>Address:</span> Pala,Kerala,India</div>
+
+    <button onclick="toggleDetails()" aria-expanded="false">Show More</button>
+
+    <div id="extraInfo" aria-hidden="true">
+      <div class="info"><span>Languages Known:</span> English, Malayalam, Hindi</div>
+      <div class="info"><span>Hobbies:</span> Coding, Gaming, Reading</div>
+      <div class="info"><span>Skills:</span> HTML, CSS, JavaScript, Python, C++</div>
+      <div class="info"><span>Career Goal:</span> Software Developer / AI Engineer</div>
+      <div class="info"><span>Education:</span> B.Tech in Computer Science, AJCE </div>
+      <div class="info"><span>Certifications:</span> Python for Everybody (Coursera), Frontend Web Dev (freeCodeCamp)</div>
+      <div class="info"><span>Projects:</span> Productivity App, Intraday Stock Analyzer, AI Chatbot</div>
+      <div class="info"><span>LinkedIn:</span> <a href="https://www.linkedin.com/in/rohan-joseph-sam-b006b6317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">https://www.linkedin.com/in/rohan-joseph-sam-b006b6317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app</a></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      const extraInfo = document.getElementById('extraInfo');
+      const button = document.querySelector('button');
+      const isShowing = extraInfo.classList.contains('show');
+
+      if (!isShowing) {
+        extraInfo.classList.add('show');
+        extraInfo.setAttribute('aria-hidden', 'false');
+        button.textContent = 'Show Less';
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        extraInfo.classList.remove('show');
+        extraInfo.setAttribute('aria-hidden', 'true');
+        button.textContent = 'Show More';
+        button.setAttribute('aria-expanded', 'false');
+      }
+    }
+  </script>
+
+</body>
+</html>
